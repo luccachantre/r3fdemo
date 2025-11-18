@@ -1,5 +1,7 @@
 import { Canvas } from '@react-three/fiber'
 import { PointerLockControls } from '@react-three/drei'
+import { Physics } from '@react-three/cannon'
+
 
 import Box from './components/Box'
 import TrackingBox from './components/TrackingBox'
@@ -8,14 +10,18 @@ import CameraBox from './components/CameraBox'
 import CurveCamera from './components/curveCamera'
 import Scene from './components/Scene'
 import HitBox from './components/HitBox'
+import Floor from './components/Floor'
+import BaseBox from './components/BaseBox'
 
 function App() {
 
   return (
-    <Canvas id='theCanvas' camera={{position: [0, 2, 5]}} >
-      <ambientLight intensity={Math.PI / 2} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI / 2} />
-      <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
+    <Canvas id='theCanvas' shadows camera={{fov: 50}}>
+      <Physics gravity={[0, -9.8, 0]}>
+        <Floor position={[0, 0, 0]} rotation={[0, 0, 0]}/>
+        <BaseBox position={[0, 0, 0]} rotation={[0, 0, 0]}/>
+      </Physics>
+      
       <D3Text />
       <PointerLockControls/>
     </Canvas>
