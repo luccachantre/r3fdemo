@@ -16,14 +16,19 @@ import BaseBox from './components/BaseBox'
 function App() {
 
   return (
-    <Canvas id='theCanvas' shadows camera={{fov: 50}}>
-      <Physics gravity={[0, -9.8, 0]}>
-        <Floor position={[0, 0, 0]} rotation={[0, 0, 0]}/>
-        <BaseBox position={[0, 0, 0]} rotation={[0, 0, 0]}/>
-      </Physics>
-      
+    <Canvas camera={{position: [0, 0, 5]}}>
+      <ambientLight intensity={Math.PI / 2} />
+      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
+      <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
+      <Box position={[1.2, 2, 0]} />
+      <Box position={[-1.2, 2, 0]} />
+      <TrackingBox position={[1.5, 0, 0]} />
+      <TrackingBox position={[0, 0, 0]} />
+      <TrackingBox position={[-1.5, 0, 0]} />
+      <CameraBox position={[5, 2, -2]} />
+      <Scene></Scene>
       <D3Text />
-      <PointerLockControls/>
+      <CurveCamera />
     </Canvas>
   )
 }
