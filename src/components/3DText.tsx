@@ -1,8 +1,10 @@
 import * as THREE from 'three'
 import { useRef, useEffect} from 'react'
 import { useFrame } from '@react-three/fiber'
-import { Text3D, Center } from '@react-three/drei'
+import { Text3D } from '@react-three/drei'
+/*
 import { mx_bilerp_0 } from 'three/src/nodes/materialx/lib/mx_noise.js'
+*/
 
 function D3Text() {
 
@@ -15,7 +17,7 @@ function D3Text() {
         }
     }, [])
 
-    useFrame((state, delta) => {
+    useFrame((_, delta) => {
         //what is delta and why would we use delta and not a hardcoded number like 0.01?
         //delta represents elapsed time between frames, it ensures consistency across different framerates
         //for a 60 fps monitor delta equals around 0.0167 (1/60th of a second)

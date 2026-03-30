@@ -1,7 +1,7 @@
 import * as THREE from 'three';
-import { useRef, useState, useMemo } from 'react'
-import { useFrame, useThree } from '@react-three/fiber'
-import type { ThreeElements } from '@react-three/fiber'
+import { useRef, useState} from 'react'
+import { useFrame} from '@react-three/fiber'
+//import type { ThreeElements } from '@react-three/fiber'
 
 const curve = new THREE.CatmullRomCurve3([
     new THREE.Vector3( 0, 0, 2 ),
@@ -16,16 +16,15 @@ const geometry = new THREE.BufferGeometry().setFromPoints(points)
 const material = new THREE.LineBasicMaterial({color: 0xc96ce6})
 const curveObject = new THREE.Line(geometry, material);
 
-function CurveCamera(props: ThreeElements['mesh']) { //props isn't needed here
+//props isn't needed here
+// function CurveCamera(props: ThreeElements['mesh']) {
+function CurveCamera() { 
     const meshRef = useRef<THREE.Mesh>(null!)
-    const [hovered, setHover] = useState(false)
-    const [active, setActive] = useState(false)
-
-    const { camera } = useThree()
+    const [hovered, _] = useState(false)
 
     let x = 0;
 
-    useFrame((state, delta) => {
+    useFrame((state) => {
         //delta is not elapsed time, it's how much time has passed between frames I think
         
         //something.getPointAt

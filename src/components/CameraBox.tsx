@@ -1,24 +1,24 @@
 import * as THREE from 'three'
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState} from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
 import type { ThreeElements } from '@react-three/fiber'
 
 function CameraBox(props: ThreeElements['mesh']) {
     const meshRef = useRef<THREE.Mesh>(null!)
-    const [hovered, setHover] = useState(false)
+    const [_, setHover] = useState(false)
     const [active, setActive] = useState(false)
     const [startTime, setStartTime] = useState(performance.now())
 
     const { camera } = useThree()
 
-    useFrame((state, delta) => {
+    useFrame(() => {
         //const elapsed = performance.now() * 0.001;
         if (active) {
             const elapsed = (performance.now() - startTime) * 0.001;
             const duration = 3
 
             if (elapsed < duration) { //my solution to animate over a certain period of time, not sure about position though
-                const speed = 1
+                //const speed = 1
 
                 let xAmount = (meshRef.current.position.x + 5) - camera.position.x
                 let zAmount = (meshRef.current.position.z - 5) - camera.position.z

@@ -16,7 +16,7 @@ function TrackingBox(props: ThreeElements['mesh']) {
     //implement a click and drag feature for the cubes, shouldnt be too difficult
 
 
-    useFrame((state, delta) => {
+    useFrame((state) => {
 
         if (hovered) {
             meshRef.current.rotation.x = -state.pointer.y * 1.6 
