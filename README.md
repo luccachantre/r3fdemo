@@ -12,6 +12,8 @@ first I had to install node 22.19 because I had node 18.7 before and it said you
 
 So then I ran npm install, then I ran npm install three @react-three/fiber @react-three/drei.
 
+locally, I run npm run dev, but when hosting, vercel runs npm build, which caused some issues. I had some imported assets that I didnt use, and also some declared variables that I never used, which were fine when running with npm run dev, but when vercel ran npm run build, it failed the build because of those unused things, and so I had to go in and comment them out or remove them.
+
 drei is a helper toolkit for react three fiber that makes some common tasks much easier like adding html components to a 3d scene, orbit controls, perspective camera setup, 3d text, loading gltf models easily, adding prebuilt skyboxes, and more. And react three fiber is something that lets threejs integrate easily with react, where we can create 3d objects as reusable react components and can apply hooks and state and useEffect and stuff I think
 
 We'll also need to do npm install three @react-three/cannon

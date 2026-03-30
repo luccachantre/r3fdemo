@@ -1,6 +1,8 @@
 import * as THREE from 'three'
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
+/*
 import { useFrame, useLoader } from '@react-three/fiber'
+*/
 import type { ThreeElements } from '@react-three/fiber'
 import { Plane, useTexture } from '@react-three/drei'
 

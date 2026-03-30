@@ -9,7 +9,12 @@ function Box(props: ThreeElements['mesh']) {
     const [active, setActive] = useState(false)
 
     let a = 0.01
-    useFrame((state, delta) => {
+    useFrame((_, delta) => {
+        //usually its useFrame((state, delta) =>
+        // but we dont use state, and if we remove it and make it useFrame((delta))
+        //then it will treat delta as the state variable and cause an error on meshRef.current.rotation.x = delta
+        //so we can get around this by putting _ instead of state, it tells typescript 
+        // "I'm intentionally not using this variable"
         meshRef.current.rotation.x += delta
         //meshRef.current.position.x = Math.sin(a)
         a += 0.01

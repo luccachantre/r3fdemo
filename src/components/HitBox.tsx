@@ -15,7 +15,7 @@ function HitBox() {
     }, [])
 
 
-    useFrame((state,delta) => {
+    useFrame(() => {
         if (wIsDown) {
             camera.position.z -= 0.02
             meshRef.current.position.copy(camera.position)

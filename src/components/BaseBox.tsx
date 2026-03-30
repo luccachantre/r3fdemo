@@ -9,7 +9,7 @@ type BaseBoxProps = ThreeElements['mesh'] & {
 }
 
 function BaseBox(props: BaseBoxProps) {
-    const [meshRef, api] = useBox<THREE.Mesh>((index) => ({ 
+    const [meshRef] = useBox<THREE.Mesh>(() => ({ 
         type: 'Static', 
         mass: 1, 
         onCollide: (e) => {

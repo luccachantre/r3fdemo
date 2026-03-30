@@ -4,7 +4,7 @@ import * as THREE from 'three'
 import type { ThreeElements } from '@react-three/fiber'
 
 function Floor(props: ThreeElements['mesh']) {
-    const [meshRef, api] = usePlane<THREE.Mesh>((index) => ({ 
+    const [meshRef] = usePlane<THREE.Mesh>(() => ({ 
         type: 'Static', 
         mass: 0, 
         position: props.position as Triplet,
