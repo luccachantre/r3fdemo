@@ -1,4 +1,6 @@
-# portfolio
+# react three fiber demo (not actual portfolio)
+
+https://r3f-demo-steel.vercel.app/
 
 ## frameworks/architecture/stack
 
