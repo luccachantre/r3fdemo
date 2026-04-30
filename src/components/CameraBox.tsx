@@ -43,14 +43,16 @@ function CameraBox(props: ThreeElements['mesh']) {
             } 
             
         } else {
-            // const elapsed = (performance.now() - startTime) * 0.001;
+            //const elapsed = (performance.now() - startTime) * 0.001;
 
-            //THIS IS OVERRIDING OUR CAMERA POSITION DECLARATION IN App.tsx
+            //THIS IS OVERRIDING OUR CAMERA POSITION DECLARATION IN App.tsx, 
+            // but we need it so the second click on the box resets the camera
+            //we will investigate further and resolve this issue at a later time
 
-            // camera.position.x = 0
-            // camera.position.y = 3
-            // camera.position.z = 5
-            // camera.lookAt(0, 0, 0)
+            camera.position.x = 0
+            camera.position.y = 1
+            camera.position.z = 6
+            camera.lookAt(0, 0, 0)
             
         }
     })
