@@ -1,4 +1,4 @@
-# react three fiber demo (not actual portfolio)
+# react three fiber demo
 
 https://r3f-demo-steel.vercel.app/
 
