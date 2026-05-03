@@ -33,13 +33,13 @@ function D3Text() {
     })
     
     return (
-        <Text3D ref={textRef} position={[0, -1, 2]} rotation={[-0.5, 0, 0]} scale={0.5}
+        <Text3D ref={textRef} position={[0, -1, 1]} rotation={[-0.5, 0, 0]} scale={0.5}
           curveSegments={32}
           bevelEnabled
           bevelSize={0.04}
           bevelThickness={0.1}
           height={0.5}
-          lineHeight={0.5}
+          lineHeight={0.6}
           letterSpacing={-0.06}
           size={1.2}
           font='./Alan_Sans.json'>
