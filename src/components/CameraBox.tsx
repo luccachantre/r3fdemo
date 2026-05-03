@@ -50,8 +50,8 @@ function CameraBox(props: ThreeElements['mesh']) {
             //we will investigate further and resolve this issue at a later time
 
             camera.position.x = 0
-            camera.position.y = 1
-            camera.position.z = 6
+            camera.position.y = 0
+            camera.position.z = 4
             camera.lookAt(0, 0, 0)
             
         }
