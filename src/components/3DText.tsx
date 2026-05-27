@@ -44,7 +44,7 @@ function D3Text() {
           size={1.2}
           font='./Alan_Sans.json'>
           {`Lucca\nChantre`}
-          <meshNormalMaterial />
+          <meshStandardMaterial color="rgb(94, 237, 190)" metalness={0.2} roughness={0.2}/>
         </Text3D>
     )
 }
