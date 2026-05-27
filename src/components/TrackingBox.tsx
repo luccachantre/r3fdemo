@@ -19,8 +19,8 @@ function TrackingBox(props: ThreeElements['mesh']) {
     useFrame((state) => {
 
         if (hovered) {
-            meshRef.current.rotation.x = -state.pointer.y * 1.6 
-            meshRef.current.rotation.y = state.pointer.x * 2.9
+            meshRef.current.rotation.x = -state.pointer.y * 2
+            meshRef.current.rotation.y = state.pointer.x * 2.5 + 0.4 * meshRef.current.position.x
         } else {
             //set it back to original state/orientation once the mouse is no longer hovering over the object
             //instead of it being left at a weird rotation when the mouse leaves it
