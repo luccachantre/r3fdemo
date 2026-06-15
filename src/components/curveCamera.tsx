@@ -41,8 +41,8 @@ function CurveCamera() {
 
 
         // camera.position.copy(position)
-        //camera.position.z = Math.sin(x) + 5
-        //camera.up.set(Math.cos(x * 0.8) , Math.sin(x * 0.8) + 3, 0)
+        // camera.position.z = Math.sin(x) + 5
+        // camera.up.set(Math.cos(x * 0.8) , Math.sin(x * 0.8) + 3, 0)
 
         // camera.lookAt(position.clone().add(tangent))
         // camera.lookAt(position)

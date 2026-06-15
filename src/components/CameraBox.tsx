@@ -5,7 +5,7 @@ import type { ThreeElements } from '@react-three/fiber'
 
 function CameraBox(props: ThreeElements['mesh']) {
     const meshRef = useRef<THREE.Mesh>(null!)
-    const [_, setHover] = useState(false)
+    const [hover, setHover] = useState(false)
     const [active, setActive] = useState(false)
     const [startTime, setStartTime] = useState(performance.now())
 
@@ -76,7 +76,7 @@ function CameraBox(props: ThreeElements['mesh']) {
         onPointerOver={() => setHover(true)}
         onPointerOut={() => setHover(false)}>
             <boxGeometry args={[1,1,1]} />
-            <meshStandardMaterial color={active ? '#ab53e6' : '#e39144'} />
+            <meshStandardMaterial color={hover ? '#ab53e6' : '#e39144'} />
         </mesh>
 
     )
